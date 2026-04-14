@@ -10,16 +10,28 @@ using System.Windows.Forms;
 
 namespace OMG
 {
-    public partial class Controller : Form
+    public interface IController
     {
         public Controller()
         {
-            InitializeComponent();
+           void PortionHerstellen();
+           void FreifahrenBereit();
+           void LeerFahren();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void PortionHerstellen(object sender, EventArgs e)
         {
-
+            Console.WriteLine("Portion wird hergestellt");
+        }
+       
+        private void FreifahrenBereit(object sender, EventArgs e)
+        {
+            Console.WriteLine("Freifahren auf Bereit gesetzt");
+        }
+        
+        private void LeerFahren(object sender, EventArgs e)
+        {
+            Console.WriteLine("Leerfahren wird ausgeführt");
         }
     }
 }
